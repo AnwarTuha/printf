@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- *  print_helper - prints to output according to given format
+ *  _print_helper - prints to output according to given format
  *
  *	@format: format of output
  *	@argument: function that handles printing of output
@@ -11,7 +11,7 @@
  *
  *  Return: count of each character of output
  */
-int print_helper(const char *format, handler_type argument[], va_list args)
+int _print_helper(const char *format, handler_type argument[], va_list args)
 {
 	int i = 0, j;
 	int count = 0;

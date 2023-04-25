@@ -16,7 +16,7 @@ typedef struct handler
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int print_helper(const char *format, handler_type args[], va_list list);
+int _print_helper(const char *format, handler_type args[], va_list list);
 int _print_c(va_list ap);
 int _print_s(va_list ap);
 int _print_percent(va_list args __attribute__((unused)));
