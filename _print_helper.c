@@ -6,12 +6,12 @@
  *  _print_helper - prints to output according to given format
  *
  *	@format: format of output
- *	@argument: function that handles printing of output
+ *	@type: function that handles printing of output
  *	@args: arguments to be printed
  *
  *  Return: count of each character of output
  */
-int _print_helper(const char *format, handler_type argument[], va_list args)
+int _print_helper(const char *format, handler_type type[], va_list args)
 {
 	int i = 0, j;
 	int count = 0;
@@ -30,17 +30,17 @@ int _print_helper(const char *format, handler_type argument[], va_list args)
 
 		i++;
 		j = 0;
-		while (argument[j].parameter)
+		while (type[j].parameter)
 		{
-			if (*argument[j].parameter == format[i])
+			if (*type[j].parameter == format[i])
 			{
-				count += argument[j].f(args);
+				count += type[j].f(args);
 				break;
 			}
 			j++;
 		}
 
-		if (!argument[j].parameter)
+		if (!type[j].parameter)
 		{
 			count += _putchar('%');
 			count += _putchar(format[i]);

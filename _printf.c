@@ -23,13 +23,13 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
-	if (format == NULL || (format[0] == '%' && !format[1]))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
 
 	va_start(args, format);
-	count = print_helper(format, type, args);
+	count = _print_helper(format, type, args);
 	va_end(args);
 
 	return (count);
