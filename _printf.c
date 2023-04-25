@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 		{"d", _print_i},
 		{"i", _print_i},
 		{"b", _print_binary},
+		{"u", _print_unsigned},
 		{NULL, NULL}
 	};
 

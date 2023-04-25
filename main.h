@@ -25,5 +25,6 @@ int _print_i(va_list args);
 int _print_binary(va_list args);
 char *_convert_base(unsigned int n, unsigned int base);
 int _print_unsigned(va_list args);
+int _print_octal(va_list args);
 
 #endif /* MAIN_H */
