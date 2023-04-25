@@ -23,6 +23,6 @@ int _print_percent(va_list args);
 int _print_d(va_list args);
 int _print_i(va_list args);
 int _print_binary(va_list args);
-
+int _print_base(unsigned int n, unsigned int base);
 
 #endif /* MAIN_H */
