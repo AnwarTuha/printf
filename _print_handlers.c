@@ -79,10 +79,18 @@ int _print_percent(va_list args __attribute__((unused)))
  */
 char *_convert_to_base(unsigned int n, unsigned int base)
 {
-	char *result = malloc(33);
-	char *ptr = result, *ptr1 = result, tmp_char;
+	char *result;
+	char *ptr, *ptr1, tmp_char;
 	unsigned int tmp_value;
 
+	if (base < 2 || base > 16)
+		return (NULL);
+
+	result = malloc(33);
+	if (!result)
+		return (NULL);
+
+	ptr = result;
 	if (n == 0)
 	{
 		*ptr++ = '0';
@@ -94,15 +102,16 @@ char *_convert_to_base(unsigned int n, unsigned int base)
 			n /= base;
 			*ptr++ = "0123456789ABCDEF"[tmp_value - n * base];
 		} while (n);
+	}
 
-		*ptr-- = '\0';
+	*ptr-- = '\0';
 
-		while (ptr1 < ptr)
-		{
-			tmp_char = *ptr;
-			*ptr-- = *ptr1;
-			*ptr1++ = tmp_char;
-		}
+	ptr1 = result;
+	while (ptr1 < ptr)
+	{
+		tmp_char = *ptr;
+		*ptr-- = *ptr1;
+		*ptr1++ = tmp_char;
 	}
 
 	return (result);
