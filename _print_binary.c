@@ -15,6 +15,11 @@ int _print_binary(va_list args)
 	unsigned int n = va_arg(args, unsigned int);
 	char *s = _convert_to_base(n, 2);
 
+	if (!n)
+	{
+		count += _putchar('0');
+	}
+
 	for (i = 0; s[i]; i++)
 	{
 		count += _putchar(s[i]);

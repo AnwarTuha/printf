@@ -23,7 +23,7 @@ int _print_hex_lowercase(va_list args)
 		count += _putchar('0');
 	}
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] && n; i++)
 	{
 		if (s[i] >= 'A' && s[i] <= 'F')
 		{
@@ -54,7 +54,7 @@ int _print_hex_uppercase(va_list args)
 		count += _putchar('0');
 	}
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] && n; i++)
 	{
 		count += _putchar(s[i]);
 	}
