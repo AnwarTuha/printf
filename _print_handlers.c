@@ -43,10 +43,10 @@ int _print_s(va_list args)
 
 	s = va_arg(args, char *);
 
-    if (s == NULL)
-    {
-        s = "(null)";
-    }
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
 
 	for (i = 0; s[i]; i++)
 	{
