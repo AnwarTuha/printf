@@ -12,7 +12,7 @@
  */
 int _print_d(va_list args)
 {
-	int n = va_arg(args, int);
+	int *n = va_arg(args, int);
 	int count = 0;
 
 	if (n < 0)
