@@ -8,13 +8,14 @@
  * @parameter: The operator
  * @f: The function associated
  */
-typedef struct print
+typedef struct input_handler
 {
 	char *parameter;
 	int (*f)(va_list ap);
-} print_type;
+} handler_type;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+int get_input_handler(const char *format, handler_type args[], va_list list);
 
 #endif /* MAIN_H */
