@@ -27,7 +27,7 @@ int _print_c(va_list args)
 {
 	_putchar(va_arg(args, int));
 	return (1);
-}
+_print_handlers.c}
 
 /**
  * _print_s - prints given string
@@ -67,3 +67,4 @@ int _print_percent(va_list args __attribute__((unused)))
 	_putchar('%');
 	return (1);
 }
+
