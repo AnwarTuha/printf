@@ -25,6 +25,8 @@ int _printf(const char *format, ...)
 		{"b", _print_binary},
 		{"u", _print_unsigned},
 		{"o", _print_octal},
+		{"x", _print_hex_lowercase},
+		{"X", _print_hex_uppercase},
 		{NULL, NULL}
 	};
 

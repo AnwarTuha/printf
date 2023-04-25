@@ -77,7 +77,7 @@ int _print_percent(va_list args __attribute__((unused)))
  *
  * Return: count of printed digits
  */
-char *_convert_base(unsigned int n, unsigned int base)
+char *_convert_to_base(unsigned int n, unsigned int base)
 {
 	char *result = malloc(33);
 	char *ptr = result, *ptr1 = result, tmp_char;
@@ -86,7 +86,7 @@ char *_convert_base(unsigned int n, unsigned int base)
 	do {
 		tmp_value = n;
 		n /= base;
-		*ptr++ = "0123456789abcdef"[tmp_value - n * base];
+		*ptr++ = "0123456789ABCDEF"[tmp_value - n * base];
 	} while (n);
 
 	*ptr-- = '\0';
