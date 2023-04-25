@@ -45,7 +45,7 @@ int _print_s(va_list args)
 
     if (s == NULL)
     {
-        s = "";
+        s = "(null)";
     }
 
 	for (i = 0; s[i]; i++)
