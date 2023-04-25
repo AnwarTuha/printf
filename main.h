@@ -20,5 +20,7 @@ int _print_helper(const char *format, handler_type args[], va_list list);
 int _print_c(va_list args);
 int _print_s(va_list args);
 int _print_percent(va_list args);
+int _print_d(va_list args);
+int _print_i(va_list args);
 
 #endif /* MAIN_H */
