@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -76,33 +77,26 @@ int _print_percent(va_list args __attribute__((unused)))
  *
  * Return: count of printed digits
  */
-int _convert_base(unsigned int n, unsigned int base)
+char *_convert_base(unsigned int n, unsigned int base)
 {
-	int count = 0;
+	char *result = malloc(33);
+	char *ptr = result, *ptr1 = result, tmp_char;
+	unsigned int tmp_value;
 
-	if (base <= 1)
+	do {
+		tmp_value = n;
+		n /= base;
+		*ptr++ = "0123456789abcdef"[tmp_value - n * base];
+	} while (n);
+
+	*ptr-- = '\0';
+
+	while (ptr1 < ptr)
 	{
-		return (0);
+		tmp_char = *ptr;
+		*ptr-- = *ptr1;
+		*ptr1++ = tmp_char;
 	}
 
-	if (n == 0)
-	{
-		return (1);
-	}
-
-	if (n / base)
-	{
-		count += _convert_base(n / base, base);
-	}
-
-	if (n % base < 10)
-	{
-		putchar((n % base) + '0');
-	}
-	else
-	{
-		putchar((n % base) - 10 + 'A');
-	}
-
-	return (count + 1);
+	return (result);
 }
