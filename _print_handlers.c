@@ -56,6 +56,8 @@ int _print_s(va_list args)
 /**
  * _print_percent - prints % character
  *
+ * @args: passed argument to match format of other handlers
+ *
  * Return: 1
  */
 int _print_percent(va_list args __attribute__((unused)))
