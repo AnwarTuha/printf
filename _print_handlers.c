@@ -83,14 +83,16 @@ char *_convert_to_base(unsigned int n, unsigned int base)
 	static char buffer[50];
 	char *ptr;
 
+	if (base < 2 || base > 16)
+		return (NULL);
+
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	while (n != 0)
-	{
+	do {
 		*--ptr = Representation[n % base];
 		n /= base;
-	}
+	} while (n != 0);
 
 	return (ptr);
 }
