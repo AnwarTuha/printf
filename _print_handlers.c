@@ -70,7 +70,7 @@ int _print_percent(va_list args __attribute__((unused)))
 }
 
 /**
- * _convert_base - converts and prints integer to binary in given base
+ * _convert_to_base - converts and prints integer to binary in given base
  *
  * @n: integer to be converted
  * @base: base to convert to
