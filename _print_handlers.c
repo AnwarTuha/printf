@@ -80,13 +80,29 @@ int _convert_base(unsigned int n, unsigned int base)
 {
 	int count = 0;
 
-    if (n / base)
+	if (base <= 1)
+	{
+		return (0);
+	}
+
+	if (n == 0)
+	{
+		return (1);
+	}
+
+	if (n / base)
 	{
 		count += _convert_base(n / base, base);
 	}
 
-    putchar((n % base) + '0');
+	if (n % base < 10)
+	{
+		putchar((n % base) + '0');
+	}
+	else
+	{
+		putchar((n % base) - 10 + 'A');
+	}
 
-    return count + 1;
+	return (count + 1);
 }
-

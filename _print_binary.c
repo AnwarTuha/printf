@@ -11,6 +11,7 @@
  */
 int _print_binary(va_list args)
 {
-    unsigned int n = va_arg(args, unsigned int);
-    return _convert_base(n, 2);
+	unsigned int n = va_arg(args, unsigned int);
+
+	return (_convert_base(n, 2));
 }
