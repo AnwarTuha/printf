@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "../main.h"
+#include "main.h"
 
 /**
  * main - Entry point
@@ -13,7 +13,7 @@ int main(void)
 
 	ui = (unsigned int)INT_MAX + 1024;
 
-	_printf("%b\n", 98);
+	_printf("%b\n", 0);
 	_printf("Unsigned octal:[%o]\n", ui);
 	printf("Unsigned octal:[%o]\n", ui);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);

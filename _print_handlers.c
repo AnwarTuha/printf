@@ -83,19 +83,26 @@ char *_convert_to_base(unsigned int n, unsigned int base)
 	char *ptr = result, *ptr1 = result, tmp_char;
 	unsigned int tmp_value;
 
-	do {
-		tmp_value = n;
-		n /= base;
-		*ptr++ = "0123456789ABCDEF"[tmp_value - n * base];
-	} while (n);
-
-	*ptr-- = '\0';
-
-	while (ptr1 < ptr)
+	if (n == 0)
 	{
-		tmp_char = *ptr;
-		*ptr-- = *ptr1;
-		*ptr1++ = tmp_char;
+		*ptr++ = '0';
+	}
+	else
+	{
+		do {
+			tmp_value = n;
+			n /= base;
+			*ptr++ = "0123456789ABCDEF"[tmp_value - n * base];
+		} while (n);
+
+		*ptr-- = '\0';
+
+		while (ptr1 < ptr)
+		{
+			tmp_char = *ptr;
+			*ptr-- = *ptr1;
+			*ptr1++ = tmp_char;
+		}
 	}
 
 	return (result);
