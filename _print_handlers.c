@@ -68,3 +68,25 @@ int _print_percent(va_list args __attribute__((unused)))
 	return (1);
 }
 
+/**
+ * _convert_base - converts and prints integer to binary in given base
+ *
+ * @n: integer to be converted
+ * @base: base to convert to
+ *
+ * Return: count of printed digits
+ */
+int _convert_base(unsigned int n, unsigned int base)
+{
+	int count = 0;
+
+    if (n / base)
+	{
+		count += _convert_base(n / base, base);
+	}
+
+    putchar((n % base) + '0');
+
+    return count + 1;
+}
+
