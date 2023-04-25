@@ -42,10 +42,12 @@ int _print_s(va_list args)
 	char *s;
 
 	s = va_arg(args, char *);
-	if (!s)
-	{
-		s = "(null)";
-	}
+
+    if (s == NULL)
+    {
+        s = "";
+    }
+
 	for (i = 0; s[i]; i++)
 	{
 		_putchar(s[i]);

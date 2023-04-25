@@ -4,14 +4,14 @@
 #include <stdarg.h>
 
 /**
- * struct handler - print
- * @parameter: The operator
- * @f: The function associated
+ * struct handler - gets handler function based on format
+ * @parameter: format required
+ * @f: function that satisfies the format
  */
 typedef struct handler
 {
 	char *parameter;
-	int (*f)(va_list ap);
+	int (*f)(va_list args);
 } handler_type;
 
 int _printf(const char *format, ...);
