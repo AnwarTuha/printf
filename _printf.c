@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		{"o", _print_octal},
 		{"x", _print_hex_lowercase},
 		{"X", _print_hex_uppercase},
-		{"p",_print_p},
+		{"p", _print_p},
 		{NULL, NULL}
 	};
 
