@@ -16,16 +16,21 @@ int _print_S(va_list args)
 	char *str = va_arg(args, char *);
 	int count = 0, i;
 
+	if (str == NULL)
+	{
+		s = "(null)";
+	}
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		if (str[i] >= 32 && str[i] < 127)
 		{
-			printf("\\x%02X", str[i]);
-			count += 4;
+			_putchar(str[i]), count++;
 		}
 		else
 		{
-			_putchar(str[i]), count++;
+			printf("\\x%02X", str[i]);
+			count += 4;
 		}
 	}
 	return (count);
