@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 		{"X", _print_hex_uppercase},
 		{"p", _print_p},
 		{"S", _print_S},
+		{"ld", _print_ld},
 		{NULL, NULL}
 	};
 
