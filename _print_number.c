@@ -13,7 +13,8 @@
  */
 int _print_i(va_list args)
 {
-	int count = 0, i;
+	int i;
+	int count = 0;
 	int n = va_arg(args, int);
 
 	if (n < 0)
@@ -50,7 +51,8 @@ int _print_i(va_list args)
  */
 int _print_ld(va_list args)
 {
-	int count = 0, i;
+	int i;
+	int count = 0;
 	long int n = va_arg(args, long int);
 
 	if (n < 0)
