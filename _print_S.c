@@ -18,7 +18,7 @@ int _print_S(va_list args)
 
 	if (args == NULL || str == NULL)
 	{
-		str = "(null)";
+		str = "(nil)";
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
