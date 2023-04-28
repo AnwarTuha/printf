@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-	_printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+	_printf("%S\n", "Best\nSchool");
     return (0);
 }
