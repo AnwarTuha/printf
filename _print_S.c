@@ -13,21 +13,25 @@
  */
 int _print_S(va_list args)
 {
-	int count = 0;
 	char *str = va_arg(args, char *);
+	int count = 0, i;
 
-	while (*str) {
-		if (*str >= 32 && *str < 127)
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
 		{
-			putchar(*str);
-			count++;
+			count += printf("\\x%20X", str[i]);
 		}
 		else
 		{
-			printf("\\x%02X", *str);
-			count += 4;
+			_putchar(str[i]);
+			count++;
 		}
-		str++;
 	}
 
 	return (count);
