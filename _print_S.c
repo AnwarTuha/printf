@@ -29,8 +29,7 @@ int _print_S(va_list args)
 		}
 		else
 		{
-			printf("\\x%02X", str[i]);
-			count += 4;
+			count += printf("\\x%02X", str[i]);
 		}
 	}
 	return (count);
