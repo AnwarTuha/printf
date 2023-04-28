@@ -13,43 +13,32 @@
  */
 int _print_S(va_list args)
 {
-	char *str = va_arg(args, char *);
-	int count = 0, i;
+	char *str;
+	int i, count = 0;
+	int cast;
 
-	if (args == NULL || str == NULL)
-	{
-		str = "(nil)";
-	}
+	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == '\\')
+		if (str[i] < 32 || str[i] >= 127)
 		{
-			if (str[i + 1] == 'n')
+			_putchar('\\');
+			_putchar('x');
+			count = count + 2;
+			cast = str[i];
+			if (cast < 16)
 			{
-				_putchar('\n'), count++;
-				i++;
-				continue;
+				_putchar('0');
+				count++;
 			}
-			else if (str[i + 1] == 't')
-			{
-				_putchar('\t'), count++;
-				i++;
-				continue;
-			}
-			else
-			{
-				_putchar(str[i]), count++;
-				continue;
-			}
-		}
-		else if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
-		{
-			printf("\\x%02X", str[i]);
-			count += 4;
+			count += _print_hex_lowercase(cast);
 		}
 		else
 		{
-			_putchar(str[i]), count++;
+			_putchar(str[i]);
+			count++;
 		}
 	}
 	return (count);
