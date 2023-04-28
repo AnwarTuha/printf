@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		{"s", _print_s},
 		{"%", _print_percent},
 		{"d", _print_i},
+		{"+d", _print_i},
 		{"i", _print_i},
 		{"b", _print_binary},
 		{"u", _print_unsigned},
