@@ -18,7 +18,7 @@ int _print_S(va_list args)
 
 	if (str == NULL)
 	{
-		return printf("(null)");
+		return (printf("(null)"));
 	}
 
 	for (i = 0; str[i] != '\0'; i++)
