@@ -32,4 +32,6 @@ int _print_p(va_list args);
 int _print_S(va_list args);
 int _print_ld(va_list args);
 
+int printf_HEX_aux(unsigned int num);
+
 #endif /* MAIN_H */

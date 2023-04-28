@@ -33,7 +33,7 @@ int _print_S(va_list args)
 				_putchar('0');
 				count++;
 			}
-			count += _print_hex_lowercase(cast);
+			count += printf_HEX_aux(cast);
 		}
 		else
 		{

@@ -31,6 +31,6 @@ int _print_p(va_list args)
 	a = (unsigned long int)pointer;
 	_putchar('0');
 	_putchar('x');
-	b = printf_hex_aux(a);
+	b = printf_HEX_aux(a);
 	return (b + 2);
 }
