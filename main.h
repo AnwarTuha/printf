@@ -31,5 +31,7 @@ int _print_hex_uppercase(va_list args);
 int _print_p(va_list args);
 int _print_S(va_list args);
 int _print_ld(va_list args);
+int _print_i_plus(va_list args);
+int _print_i_space(va_list args);
 
 #endif /* MAIN_H */
