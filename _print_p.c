@@ -12,25 +12,34 @@
  */
 int _print_p(va_list args)
 {
-	void *pointer;
-	char *str = "(nil)";
-	long int a;
-	int b;
-	int i;
+	void *p = va_arg(args, void *);
+	unsigned long int n = (unsigned long int)p;
+	int printed = 0;
 
-	pointer = va_arg(args, void*);
-	if (pointer == NULL)
+	printed += _putchar('0');
+	printed += _putchar('x');
+
+	if (n == 0)
 	{
-		for (i = 0; str[i] != '\0'; i++)
+		printed += _putchar('0');
+	}
+	else
+	{
+		char hex[16] = "0123456789abcdef";
+		char buf[20];
+		int i = 0;
+
+		while (n != 0)
 		{
-			_putchar(str[i]);
+			buf[i++] = hex[n % 16];
+			n /= 16;
 		}
-		return (i);
+
+		while (i > 0)
+		{
+			printed += _putchar(buf[--i]);
+		}
 	}
 
-	a = (unsigned long int)pointer;
-	_putchar('0');
-	_putchar('x');
-	b = printf_HEX_aux(a);
-	return (b + 2);
+	return (printed);
 }
