@@ -16,6 +16,11 @@ int _print_S(va_list args)
 	char *str = va_arg(args, char *);
 	int count = 0, i;
 
+	if (args == NULL)
+	{
+		return (0);
+	}
+
 	if (str == NULL)
 	{
 		return (0);
