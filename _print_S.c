@@ -16,29 +16,41 @@ int _print_S(va_list args)
 	char *str = va_arg(args, char *);
 	int count = 0, i;
 
-	if (args == NULL)
+	if (args == NULL || str == NULL)
 	{
 		return (0);
 	}
-
-	if (str == NULL)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		return (0);
-	}
-
-	for (i = 0; str[i]; i++)
-	{
-		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		if (str[i] == '\\')
+		{
+			if (str[i + 1] == 'n')
+			{
+				_putchar('\n'), count++;
+				i++;
+				continue;
+			}
+			else if (str[i + 1] == 't')
+			{
+				_putchar('\t'), count++;
+				i++;
+				continue;
+			}
+			else
+			{
+				_putchar(str[i]), count++;
+				continue;
+			}
+		}
+		else if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
 		{
 			printf("\\x%02X", str[i]);
 			count += 4;
 		}
 		else
 		{
-			_putchar(str[i]);
-			count++;
+			_putchar(str[i]), count++;
 		}
 	}
-
 	return (count);
 }

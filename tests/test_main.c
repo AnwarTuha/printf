@@ -9,14 +9,6 @@
  */
 int main(void)
 {
-	unsigned int ui;
-
-	ui = (unsigned int)INT_MAX + 1024;
-
-	_printf("%b\n", 100000);
-	_printf("Unsigned octal:[%o]\n", ui);
-	printf("Unsigned octal:[%o]\n", ui);
-	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	return (0);
+	_printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+    return (0);
 }
